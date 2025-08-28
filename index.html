@@ -1,25 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe — Discover & Eat </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>GRILL MASTER POS</title>
+
 </head>
-<body>
-    <h1>Working in Progress</h1>
-    <head>
+
+<body class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark nav-gradient sticky-top">
+        <div class="container p-3">
+            <a class="navbar-brand fw-bold" href="#">Food Recipes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCol">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navCol">
+                <form id="searchForm" class="d-flex ms-auto me-3" role="search">
+                    <input id="searchInput" class="form-control me-2" type="search"
+                        placeholder="Search meals by name..." aria-label="Search">
+                    <button id="buttonsearch" class="btn btn-outline-light" type="button"
+                        onclick="searchMealName()">Search</button>
+                </form>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <input id="ingredientInput" class="form-control form-control-sm me-1 text-light"
+                        style="width:150px;" placeholder="Ingredient (eg. chicken)">
+
+                    <button id="ingredientBtn" class="btn btn-sm btn-light fw-semibold" onclick="searchByIngredient()">Find by
+                        Ingredient</button>
+                    <button id="randomBtn" class="btn btn-warning btn-sm fw-bold" onclick="searchRandom()">Discover a
+                        Meal</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="align-items-center">
+        <div id="mainContainer">
+
+        </div>
+        <div class="hero d-flex align-items-center text-white">
+            <div class="container text-center" data-aos="fade-up">
+                <h1 class="display-5">Cook. Taste. Enjoy.</h1>
+                <p class="lead">Search thousands of meals, explore categories and cuisines, or discover a random recipe.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
 
 
-    </head>
-    <main>
+        <section class="row g-3 mb-4">
+            <div class="col-md-4" data-aos="fade-right">
+                <label class="form-label">Browse Categories</label>
+                <select id="categoriesSelect" class="form-select"></select>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <label class="form-label">Browse Areas </label>
+                <select id="areasSelect" class="form-select"></select>
+            </div>
+            <div class="col-md-4" data-aos="fade-left">
+                <label class="form-label">Category & Area Quick Links</label>
+                <div class="d-flex gap-2" style="padding-left: 50px;">
+                    <button id="showAllBtn" class="btn btn-outline-light" onclick="searchRandom()">Show Results</button>
+                </div>
+            </div>
+        </section>
 
+        <section id="results" class="mb-5">
+            <h2 class="h5 mb-3" data-aos="fade-up">Results</h2>
+            <div id="mealsGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            </div>
+        </section>
+
+        <section class="random-picks my-5" data-aos="fade-up">
+            <h2 class="h5 mb-3">Random Selection Just For You</h2>
+            <div id="randomScroll" class="d-flex overflow-auto gap-3 py-2">
+
+            </div>
+        </section>
 
     </main>
-    <footer>
 
-
+    <footer class="text-center text-white py-4 small">
+        <div class="container">
+            <div>© 2025 GrillMaster Recipes — Powered by <a class="link-warning"
+                    href="https://www.themealdb.com/api.php" target="_blank">TheMealDB API</a></div>
+        </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
